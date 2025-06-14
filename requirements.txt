@@ -7,3 +7,7 @@ shap
 optuna
 pytest
 ruff
+joblib
+imbalanced-learn
+xgboost
+pytest

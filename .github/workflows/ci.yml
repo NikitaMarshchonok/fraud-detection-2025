@@ -4,10 +4,22 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Клонируем репозиторий
       - uses: actions/checkout@v4
+
+      # 2. Ставим нужную версию Python
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      # 3. Устанавливаем зависимости проекта
       - run: pip install -q -r requirements.txt
+
+      # 4. **Собираем Docker-образ** (ключевая вставка)
+      - name: Build Docker image
+        run: docker build -t fraud-api .
+
+      # 5. Запускаем юнит-тесты
       - run: pytest -q

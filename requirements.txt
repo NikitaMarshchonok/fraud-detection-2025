@@ -11,3 +11,6 @@ joblib
 imbalanced-learn
 xgboost
 pytest
+fastapi
+uvicorn[standard]
+pydantic

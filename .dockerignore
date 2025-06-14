@@ -1,0 +1,6 @@
+# игнорируем тяжёлое или лишнее
+notebooks/
+mlruns/
+*.ipynb
+__pycache__/
+*.pyc
